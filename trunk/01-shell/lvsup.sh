@@ -1,4 +1,5 @@
 #!/bin/bash
+<<'
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 IPVSADM='/sbin/ipvsadm'
@@ -16,3 +17,5 @@ $IPVSADM -C
 $IPVSADM -A -t $VIP:80 -s rr
 $IPVSADM -a -t $VIP:80 -r $RS1:80 -g
 $IPVSADM -a -t $VIP:80 -r $RS2:80 -g
+'
+echo ok
