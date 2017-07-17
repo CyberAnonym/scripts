@@ -1,4 +1,5 @@
 #!/bin/bash
+<<EOF
 function AA
 {
 read -p "Please input a number:" NUMBER
@@ -13,3 +14,6 @@ fi
 }
 AA
 BB
+EOF
+echo "hello"
+echo "ok"
