@@ -1,3 +1,0 @@
-#!/bin/bash
-
-grep -vE "grep|alvpsaux"|grep --color $@
