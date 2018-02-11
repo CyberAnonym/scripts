@@ -1,6 +1,6 @@
 #!/bin/bash
 if true;then
-   echo 'yes'
+   echo 'maybe yes'
    else
    echo 'not ok'
 fi
