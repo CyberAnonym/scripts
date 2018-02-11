@@ -26,7 +26,7 @@ checkLastCommand "已成功加入到natasha.alv.pub LDAP系统。" "错误，没
 }
 
 installAutofs(){
-yum -y install autofs
+yum -y install autofs nfs-utils
 checkLastCommand "autofs has been installed" "Failed install autofs"
 }
 
