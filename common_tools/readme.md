@@ -12,7 +12,7 @@
 执行方式： </br>
 ```
 scriptUrl=
-wget -q -O - $scriptUrl |bash</br>
+wget -q -O - $scriptUrl |bash
 ```
 以上是wget的执行方式，或者用curl，如下示例： </br>
 ```
