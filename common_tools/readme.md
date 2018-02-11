@@ -2,10 +2,14 @@
 ---
 
 执行方式： </br>
-scriptUrl=</br>
+```
+scriptUrl=
 wget -q -O - $scriptUrl |bash</br>
+```
 以上是wget的执行方式，或者用curl，如下示例： </br>
+```
 bash -c "$(curl -fsSL $scriptUrl)"
+```
 
 
 
