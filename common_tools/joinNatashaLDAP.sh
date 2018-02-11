@@ -14,9 +14,9 @@ fi
 }
 
 
-installSoft(){
+installLDAPSoft(){
 yum install nss-pam-ldapd setuptool -y
-checkLastCommand "相关软件已安装完成。" "相关软件安装失败"
+checkLastCommand "nss-pam-ldapd setuptool已安装完成。" "nss-pam-ldapd setuptool安装失败"
 }
 
 joinLDAP(){
@@ -24,8 +24,30 @@ authconfig --enableldap  --enableldapauth --ldapserver=ldap://natasha.alv.pub --
 checkLastCommand "已成功加入到natasha.alv.pub LDAP系统。" "错误，没有成功加入到LDAP"
 }
 
+installAutofs(){
+yum -y install autofs
+checkLastCommand "autofs has been installed" "Failed install autofs"
+}
+
+configureAuthfs(){
+echo "/sophiroth auto.sophiroth rw,nosuid --timeout=60" >>/etc/auto.master
+echo "* dc.alv.pub:/ldapUserData/&" >> /etc/auto.sophiroth
+checkLastCommand "Autofs has been configured" "Failed configure autofs"
+}
+
+startAutofs(){
+
+systemctl start autofs
+checkLastCommand "Autofs has been started" "Failed start autofs"
+systemctl enable autofs
+checkLastCommand "Autofs has been enabled" "Failed enable autofs"
+}
+
 main(){
-installSoft
+installLDAPSoft
 joinLDAP
+installAutofs
+configureAuthfs
+startAutofs
 }
 main
