@@ -27,3 +27,10 @@ bash -c "$(curl -fsSL https://github.com/AlvinWanCN/scripts/raw/master/common_to
 ```bash
 bash -c "$(curl -fsSL https://github.com/AlvinWanCN/scripts/raw/master/common_tools/disableSeAndFir.sh)"
 ```
+
+---
+#### 3 加入natasha LDAP系统
+---
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/joinNatashaLDAP.sh)"
+```
