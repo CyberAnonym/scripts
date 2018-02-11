@@ -18,7 +18,7 @@ configureSSHD(){
 sed -i 's/GSSAPIAuthentication.*/GSSAPIAuthentication no/' /etc/ssh/sshd_config
 checkLastCommand "'GSSAPIAuthentication' no has been configure in /etc/ssh/sshd_config" "Failed configure"
 sed -i 's/.UseDNS.*/UseDNS no/' /etc/ssh/sshd_config
-checkLastCommand "'UseDNS nohas' been configure in /etc/ssh/sshd_config" "Failed configure"
+checkLastCommand "'UseDNS no' has been configure in /etc/ssh/sshd_config" "Failed configure"
 service sshd reload
 checkLastCommand "sshd service has been reload" "Failed reload sshd"
 }
