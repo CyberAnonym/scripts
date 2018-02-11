@@ -8,7 +8,7 @@
 3,[加入natasha的LDAP系统](#加入natasha的LDAP系统) </br>
 4,[添加dc.alv.pub 的yum仓库](#添加dc.alv.pub的yum仓库) </br>
 2,[添加dc.alv.pub 的yum仓库](#加入natasha的LDAP系统) </br>
-2,[添加本地仓库](#添加dc.alv.pub本地仓库) </br>
+2,[添加本地仓库](#添加dc_alv_pub本地仓库) </br>
 
 
 ---
@@ -46,7 +46,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/maste
 ```
 
 ---
-#### 添加dc.alv.pub本地仓库
+#### 添加dc_alv_pub本地仓库
 ---
 
 ```bash
