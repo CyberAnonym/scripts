@@ -1,4 +1,5 @@
 <p align='center'> <a href='https://github.com/alvinwancn' target="_blank"> <img src='https://github.com/AlvinWanCN/life-record/raw/master/images/etlucency.png' alt='Alvin Wan'></a></p>
+
 ## 这里将一些系统常用的功能写入脚本便于一次性执行。
 ---
 
