@@ -8,7 +8,7 @@
 3,[加入natasha的LDAP系统](#加入natasha的LDAP系统) </br>
 4,[添加dc.alv.pub 的yum仓库](#添加dc.alv.pub的yum仓库) </br>
 2,[添加dc.alv.pub 的yum仓库](#加入natasha的LDAP系统) </br>
-2,[关闭firewalld和selinux](#添加dc.alv.pub的yum仓库) </br>
+2,[关闭firewalld和selinux](#Add dc.alv.pub repository) </br>
 
 
 ---
@@ -46,7 +46,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/maste
 ```
 
 ---
-#### 添加dc.alv.pub的yum仓库
+#### Add dc.alv.pub repository
 ---
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/pullLocalYum.py)"
