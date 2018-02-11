@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 echo0(){ #定义绿色字体输出success 红色字体是31m.绿色字是32m# 黄色颜色是33m,
 echo -e "$1 \033[032m [success] \033[0m"
 }
