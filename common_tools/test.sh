@@ -2,5 +2,5 @@
 if true;then
    echo 'yes'
    else
-   echo 'no'
+   echo 'not ok'
 fi
