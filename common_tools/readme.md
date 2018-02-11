@@ -5,7 +5,7 @@
 
 1,[解决ssh缓慢问题](#解决ssh缓慢问题)</br>
 2,[关闭firewalld和selinux](#关闭firewalld和selinux)</br>
-3,[加入natasha LDAP系统](#加入natasha的LDAP系统)</br>
+3,[加入natasha的LDAP系统](#加入natasha的LDAP系统)</br>
 
 ---
 
