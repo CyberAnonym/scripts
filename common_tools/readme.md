@@ -3,7 +3,9 @@
 
 ## 这里将一些系统常用的功能写入脚本便于一次性执行。
 
-[1 解决ssh缓慢问题](#1 解决ssh缓慢问题)</br>
+1,[解决ssh缓慢问题](#解决ssh缓慢问题)</br>
+1,[关闭firewalld和selinux](#关闭firewalld和selinux)</br>
+1,[加入natasha LDAP系统](#加入natasha的LDAP系统)</br>
 
 ---
 
@@ -19,21 +21,21 @@ bash -c "$(curl -fsSL $scriptUrl)"
 
 
 
-#### 1 解决ssh缓慢问题
+#### 解决ssh缓慢问题
 ---
 ```bash
 bash -c "$(curl -fsSL https://github.com/AlvinWanCN/scripts/raw/master/common_tools/sshslowly.sh)"
 ```
 
 ---
-#### 2 关闭firewalld和selinux
+#### 关闭firewalld和selinux
 ---
 ```bash
 bash -c "$(curl -fsSL https://github.com/AlvinWanCN/scripts/raw/master/common_tools/disableSeAndFir.sh)"
 ```
 
 ---
-#### 3 加入natasha LDAP系统
+#### 加入natasha的LDAP系统
 ---
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/joinNatashaLDAP.sh)"
