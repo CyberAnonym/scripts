@@ -4,8 +4,8 @@
 ## 这里将一些系统常用的功能写入脚本便于一次性执行。
 
 1,[解决ssh缓慢问题](#解决ssh缓慢问题)</br>
-1,[关闭firewalld和selinux](#关闭firewalld和selinux)</br>
-1,[加入natasha LDAP系统](#加入natasha的LDAP系统)</br>
+2,[关闭firewalld和selinux](#关闭firewalld和selinux)</br>
+3,[加入natasha LDAP系统](#加入natasha的LDAP系统)</br>
 
 ---
 
