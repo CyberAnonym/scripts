@@ -31,10 +31,14 @@ def startAutofs(): #启动autofs
     processCommand(os.system('systemctl enable autofs'),"Autofs has been enabled","Failed enable autofs")
     os.system('systemctl start autofs')
 def main():
-    installLDAPSoft()
-    joinLDAP()
-    installAutofs()
-    configureAuthfs()
-    startAutofs()
+    try:
+        installLDAPSoft()
+        joinLDAP()
+        installAutofs()
+        configureAuthfs()
+        startAutofs()
+    except Exception as e:
+        print('Detected error,Please check your setting.')
+        print(e)
 if __name__ == "__main__":
     main()
