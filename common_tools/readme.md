@@ -40,7 +40,6 @@ bash -c "$(curl -fsSL https://github.com/AlvinWanCN/scripts/raw/master/common_to
 #### 加入natasha的ldap系统
 ---
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/joinNatashaLDAP.sh)"
 python -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/joinNatashaLDAP.py)"
 
 ```
