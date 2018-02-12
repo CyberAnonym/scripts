@@ -6,7 +6,7 @@ def op0(content): #op是out put简写定义绿色字体输出success 红色字�
 def op1(content):
     print(content + '\033[031m [failed] \033[0m')
 def processCommand(command,successLog,failedLog): #定义确认命令是否执行成功的消息输出的函数
-    if command in (0,8):
+    if command in (0,4):
         op0(successLog)
     else:
         op1(failedLog)
@@ -26,6 +26,7 @@ def configureAuthfs(): #配置autofs
         openAutoMasterW.write('/sophiroth auto.sophiroth rw,nosuid --timeout=60')
         openAutoMasterW.close()
     processCommand(openAutoSophiroth.write('* dc.alv.pub:/ldapUserData/&'),"Autofs has been configured","Failed configure autofs") #配置sophiroth autofs
+    openAutoSophiroth.close()
 def startAutofs(): #启动autofs
     processCommand(os.system('systemctl start autofs'),"Autofs has been started","Failed start autofs")
     processCommand(os.system('systemctl enable autofs'),"Autofs has been enabled","Failed enable autofs")
