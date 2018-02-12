@@ -6,7 +6,7 @@ def op0(content): #op是out put简写定义绿色字体输出success 红色字�
 def op1(content):
     print(content + '\033[031m [failed] \033[0m')
 def processCommand(command,successLog,failedLog): #定义确认命令是否执行成功的消息输出的函数
-    if command in (0,None):
+    if command in (0,None): #open打开的文件调用write成功写入时，返回None
         op0(successLog)
     else:
         op1(failedLog)
