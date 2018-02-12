@@ -5,8 +5,9 @@
 
 1,[解决ssh缓慢问题](#解决ssh缓慢问题) </br>
 2,[关闭firewalld和selinux](#关闭firewalld和selinux) </br>
-3,[加入natasha的LDAP系统](#加入natasha的ldap系统) </br>
-4,[添加dc.alv.pub的yum本地仓库](#添加本地仓库) </br>
+3,[添加dc.alv.pub的yum本地仓库](#添加本地仓库) </br>
+4,[加入natasha的LDAP系统](#加入natasha的ldap系统) </br>
+
 
 
 ---
@@ -37,17 +38,17 @@ bash -c "$(curl -fsSL https://github.com/AlvinWanCN/scripts/raw/master/common_to
 ```
 
 ---
-#### 加入natasha的ldap系统
----
-```bash
-python -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/joinNatashaLDAP.py)"
-
-```
-
----
 #### 添加本地仓库
 ---
 
 ```bash
 python -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/pullLocalYum.py)"
+```
+
+---
+#### 加入natasha的ldap系统
+---
+```bash
+python -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/joinNatashaLDAP.py)"
+
 ```
