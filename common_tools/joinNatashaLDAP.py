@@ -1,12 +1,12 @@
 #!/usr/bin/python
-#conding:utf-8
+#coding:utf-8
 import os,re
 def op0(content): #op是out put简写定义绿色字体输出success 红色字体是31m.绿色字是32m# 黄色颜色是33m,
     print(content+'\033[032m [success] \033[0m')
 def op1(content):
     print(content + '\033[031m [failed] \033[0m')
 def processCommand(command,successLog,failedLog): #定义确认命令是否执行成功的消息输出的函数
-    if command in (0,4):
+    if command in (0,None):
         op0(successLog)
     else:
         op1(failedLog)
