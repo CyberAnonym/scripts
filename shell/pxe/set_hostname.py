@@ -4,6 +4,7 @@ import socket,os,re
 #前面是主机名，后面是ip的最后一位地址
 t7={'ip':'77','hostname':'t7.alv.pub'}
 t8={'ip':'78','hostname':'t8.alv.pub'}
+zabbix={'ip':'51','hostname':'zabbix.alv.pub'}
 
 hosts=[t7,t8]
 
