@@ -13,7 +13,8 @@ lastIPNumber=re.findall(r'\w\s(.*)\/',ipstr)[0].split('.')[-1]
 
 for i in hosts:
     if lastIPNumber == i['ip']:
-        os.system('hostnamectl set-hostname %s'%i['hostname'])
+        os.system('hostname %s'%i['hostname'])
+        os.system('echo %s > /etc/hostname'%i['hostname'])
         break
     else:
         os.system('hostnamectl set-hostname %s'%lastIPNumber+'.alv.pub')
