@@ -1,14 +1,15 @@
 #!/usr/bin/python
 #coding:utf-8
-import socket,os
+import socket,os,re
 #前面是主机名，后面是ip的最后一位地址
 t7={'ip':'77','hostname':'t7.alv.pub'}
 t8={'ip':'78','hostname':'t8.alv.pub'}
 
 hosts=[t7,t8]
 
-ip=socket.gethostbyname(socket.gethostname())
-lastIPNumber=ip.split('.')[-1]
+ipstr=os.popen('ip a s ens32|grep global').read()
+lastIPNumber=re.findall(r'\w\s(.*)\/',ipstr)[0].split('.')[-1]
+
 
 for i in hosts:
     if lastIPNumber == i['ip']:
