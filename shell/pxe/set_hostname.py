@@ -17,6 +17,6 @@ for i in hosts:
         os.system('echo %s > /etc/hostname'%i['hostname'])
         break
     else:
-        os.system('hostnamectl set-hostname %s'%lastIPNumber+'.alv.pub')
-
+        os.system('hostname %s'%lastIPNumber+'.alv.pub')
+        os.system('echo %s > /etc/hostname' %lastIPNumber+'.alv.pub')
 #
