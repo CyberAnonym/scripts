@@ -6,7 +6,7 @@ t7={'ip':'77','hostname':'t7.alv.pub'}
 t8={'ip':'78','hostname':'t8.alv.pub'}
 zabbix={'ip':'51','hostname':'zabbix.alv.pub'}
 
-hosts=[t7,t8]
+hosts=[t7,t8,zabbix]
 
 ipstr=os.popen('ip a s ens32|grep global').read()
 lastIPNumber=re.findall(r'\w\s(.*)\/',ipstr)[0].split('.')[-1]
