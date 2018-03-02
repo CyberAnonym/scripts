@@ -9,14 +9,11 @@ hosts=[t7,t8]
 
 ipstr=os.popen('ip a s ens32|grep global').read()
 lastIPNumber=re.findall(r'\w\s(.*)\/',ipstr)[0].split('.')[-1]
-
-
+defaultName='os'+lastIPNumber+'.alv.pub' #默认主机名
+os.system('hostname %s' % defaultName) #设置默认主机名
+os.system('echo %s > /etc/hostname' % defaultName) #设置默认主机名
 for i in hosts:
     if lastIPNumber == i['ip']:
         os.system('hostname %s'%i['hostname'])
         os.system('echo %s > /etc/hostname'%i['hostname'])
         break
-    else:
-        os.system('hostname %s'%lastIPNumber+'.alv.pub')
-        os.system('echo %s > /etc/hostname' %lastIPNumber+'.alv.pub')
-#
