@@ -9,7 +9,7 @@ hosts=[t7,t8]
 
 ipstr=os.popen('ip a s ens32|grep global').read()
 lastIPNumber=re.findall(r'\w\s(.*)\/',ipstr)[0].split('.')[-1]
-defaultName='os'+lastIPNumber+'.alv.pub' #默认主机名
+defaultName='os'+str(lastIPNumber)+'.alv.pub' #默认主机名
 os.system('hostname %s' % defaultName) #设置默认主机名
 os.system('echo %s > /etc/hostname' % defaultName) #设置默认主机名
 for i in hosts:
