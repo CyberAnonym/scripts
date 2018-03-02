@@ -16,3 +16,5 @@ for i in hosts:
         break
     else:
         os.system('hostnamectl set-hostname %s'%lastIPNumber+'.alv.pub')
+
+#
