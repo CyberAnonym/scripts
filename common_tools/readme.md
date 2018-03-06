@@ -54,3 +54,5 @@ python -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/mas
 python -c "$(curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/scripts/master/common_tools/joinNatashaLDAP.py)"
 
 ```
+
+## test
