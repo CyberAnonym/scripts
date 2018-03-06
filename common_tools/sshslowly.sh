@@ -27,4 +27,4 @@ configureSSHD
 }
 main
 
-##test  oko ok okffffffffff
+##test
