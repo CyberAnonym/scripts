@@ -2,7 +2,7 @@
 #coding:utf-8
 import socket,os,re
 ipaddstr=os.popen('ip a s|grep global').read().split('\n')[:-1]
-osInfo=os.popen('cat /etc/redhat-*').read().split('\n')[0]
+osInfo=os.popen('cat /etc/redhat-release').read().split('\n')[0]
 kernel=os.popen('uname -r').read().split('\n')[0]
 cpuLine=os.popen('cat /proc/cpuinfo |grep process|wc -l').read().split('\n')[0]
 memTotalstr=os.popen('cat /proc/meminfo |grep -i memtotal').read().split('\n')[0]
