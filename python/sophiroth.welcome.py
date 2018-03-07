@@ -32,12 +32,12 @@ def print_nic():
         sophiroth_print(nicName,ip)
 
 def print_osInfo():
-    sophiroth_print('OS info:',osInfo)
+    sophiroth_print('Release Version:',osInfo)
 
 def print_hostname():
     sophiroth_print('Hostname:',hostname)
 def print_LinuxKernel():
-    sophiroth_print('LinuxKernel:',kernel)
+    sophiroth_print('Kernel Version:',kernel)
 def print_CPUState():
     sophiroth_print('vCPU:',vCPU)
     sophiroth_print('CPU Idle:',cpuIdle)
