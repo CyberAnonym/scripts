@@ -1,18 +1,21 @@
 #!/usr/bin/python
 #coding:utf-8
 import socket,os,re
+def getCommandUniqueLine(command):
+    return os.popen(command).read().split('\n')[0]
 ipaddstr=os.popen('ip a s|grep global').read().split('\n')[:-1]
-osInfo=os.popen('cat /etc/redhat-release').read().split('\n')[0]
-kernel=os.popen('uname -r').read().split('\n')[0]
-vCPU=os.popen('cat /proc/cpuinfo |grep process|wc -l').read().split('\n')[0]
-memTotalstr=os.popen('cat /proc/meminfo |grep -i memtotal').read().split('\n')[0]
-memAvailable=os.popen('cat /proc/meminfo |grep -i MemAvailable').read().split('\n')[0]
-user=os.popen('whoami').read().split('\n')[0]
-homedir=os.popen('echo $HOME').read().split('\n')[0]
-cpuIdle=os.popen("vmstat 1 1|tail -1|awk '{print $15}'").read().split('\n')[0]
-userNumber=os.popen("w|head -1").read().split('\n')[0]
-lastLoginIP=os.popen("last|head -2|tail -1|awk '{print $3}'").read().split('\n')[0]
+osInfo=getCommandUniqueLine('cat /etc/redhat-release')
+kernel=getCommandUniqueLine('uname -r')
+vCPU=getCommandUniqueLine('cat /proc/cpuinfo |grep process|wc -l')
+memTotalstr=getCommandUniqueLine('cat /proc/meminfo |grep -i memtotal')
+memAvailable=getCommandUniqueLine('cat /proc/meminfo |grep -i MemAvailable')
+user=getCommandUniqueLine('whoami')
+homedir=getCommandUniqueLine('echo $HOME')
+cpuIdle=getCommandUniqueLine("vmstat 1 1|tail -1|awk '{print $15}'")
+userNumber=getCommandUniqueLine("w|head -1")
+lastLoginIP=getCommandUniqueLine("last|head -2|tail -1|awk '{print $3}'")
 hostname=socket.gethostname()
+
 
 def value(content):
 #    return ('\033[1;4;031m %s\033[0m'%content)  #\033[代表开始定义字体格式，1代表高亮显示，4代表使用下划线 ，031m代表红色字体，\033[0m代表使用终端设置，即取消颜色设置
