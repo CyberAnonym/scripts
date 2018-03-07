@@ -43,20 +43,28 @@ def print_CPUState():
 def print_memState():
     totalMem=str(int(int(re.findall(r'\d.*\d',memTotalstr)[0])/1024))+' MB'
     availableMem=str(int(int(re.findall(r'\d.*\d',memAvailable)[0])/1024))+' MB'
+    availableMemPercent='('+str(float('%.2f'%(float(int(re.findall(r'\d.*\d', memAvailable)[0]))/float(int(re.findall(r'\d.*\d', memTotalstr)[0])))))+'%)'
     sophiroth_print("Total Memory:",totalMem)
-    sophiroth_print("Availible Memory:",availableMem)
+    sophiroth_print("Availible Memory:",availableMem+' '+availableMemPercent)
 def print_userInfo():
     sophiroth_print('User Name:',user)
     sophiroth_print('Home Directory:',homedir)
     sophiroth_print('Login User Number:',userNumber)
 
+def main():
+    print('╭'+'\033[5;1;032mWelcome to Alvin\'s Compute Center\033[0m'.center(87,'-')+'╮')
+    print_hostname()
+    print_nic()
+    print_osInfo()
+    print_LinuxKernel()
+    print_CPUState()
+    print_memState()
+    print_userInfo()
+    print('╰'+'\033[4;1;035mSophiroth Cluster\033[0m'.center(87,'-')+'╯')
 
-print('╭'+'\033[5;1;032mWelcome to Alvin\'s Compute Center\033[0m'.center(87,'-')+'╮')
-print_hostname()
-print_nic()
-print_osInfo()
-print_LinuxKernel()
-print_CPUState()
-print_memState()
-print_userInfo()
-print('╰'+'\033[4;1;035mSophiroth Cluster\033[0m'.center(87,'-')+'╯')
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print('Sophiroth warning: welcome information collection get error. Error message as follows:')
+        print(e)
