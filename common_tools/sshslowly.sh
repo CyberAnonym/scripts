@@ -26,5 +26,3 @@ main(){
 configureSSHD
 }
 main
-
-##test888888
