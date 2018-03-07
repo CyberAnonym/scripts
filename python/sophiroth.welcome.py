@@ -41,7 +41,7 @@ def print_CPUState():
 def print_memState():
     totalMem=str(int(int(re.findall(r'\d.*\d',memTotalstr)[0])/1024))+' MB'
     availableMem=str(int(int(re.findall(r'\d.*\d',memAvailable)[0])/1024))+' MB'
-    availableMemPercent='('+str(float('%.2f'%(float(int(re.findall(r'\d.*\d', memAvailable)[0]))/float(int(re.findall(r'\d.*\d', memTotalstr)[0])))))+'%)'
+    availableMemPercent='('+str(float(float('%.4f'%(float(float(re.findall(r'\d.*\d', memAvailable)[0]))/float(float(re.findall(r'\d.*\d', memTotalstr)[0]))))*100))+'%)'
     sophiroth_print("Total Memory:",totalMem)
     sophiroth_print("Availible Memory:",availableMem+' '+availableMemPercent)
 def print_userInfo():
