@@ -4,11 +4,13 @@ import socket,os,re
 ipaddstr=os.popen('ip a s|grep global').read().split('\n')[:-1]
 osInfo=os.popen('cat /etc/redhat-release').read().split('\n')[0]
 kernel=os.popen('uname -r').read().split('\n')[0]
-cpuLine=os.popen('cat /proc/cpuinfo |grep process|wc -l').read().split('\n')[0]
+vCPU=os.popen('cat /proc/cpuinfo |grep process|wc -l').read().split('\n')[0]
 memTotalstr=os.popen('cat /proc/meminfo |grep -i memtotal').read().split('\n')[0]
 memAvailable=os.popen('cat /proc/meminfo |grep -i MemAvailable').read().split('\n')[0]
 user=os.popen('whoami').read().split('\n')[0]
 homedir=os.popen('echo $HOME').read().split('\n')[0]
+cpuIdle=os.popen("vmstat 1 1|tail -1|awk '{print $15}'")
+userNumber=os.popen("w|head -1|awk '{print $4}'").read().split('\n')[0]
 #a=socket.get
 #print(a)
 hostname=socket.gethostname()
@@ -35,8 +37,9 @@ def print_hostname():
     sophiroth_print('Hostname:',hostname)
 def print_LinuxKernel():
     sophiroth_print('LinuxKernel:',kernel)
-def print_cpuLIne():
-    sophiroth_print('CPU line:',cpuLine)
+def print_CPUState():
+    sophiroth_print('vCPU:',vCPU)
+    sophiroth_print('CPU Idle:',cpuIdle)
 def print_memState():
     totalMem=str(int(int(re.findall(r'\d.*\d',memTotalstr)[0])/1024))+' MB'
     availableMem=str(int(int(re.findall(r'\d.*\d',memAvailable)[0])/1024))+' MB'
@@ -45,6 +48,7 @@ def print_memState():
 def print_userInfo():
     sophiroth_print('User Name:',user)
     sophiroth_print('Home Directory:',homedir)
+    sophiroth_print('Current Login User Number:',userNumber)
 
 
 print('╭'+'\033[5;1;032mWelcome to Alvin\'s Compute Center\033[0m'.center(87,'-')+'╮')
@@ -52,8 +56,7 @@ print_hostname()
 print_nic()
 print_osInfo()
 print_LinuxKernel()
-print_cpuLIne()
+print_CPUState()
 print_memState()
 print_userInfo()
 print('╰'+'\033[4;1;035mSophiroth Cluster\033[0m'.center(87,'-')+'╯')
-print('ok,test again.')
