@@ -48,7 +48,7 @@ def print_memState():
 def print_userInfo():
     sophiroth_print('User Name:',user)
     sophiroth_print('Home Directory:',homedir)
-    sophiroth_print('Current Login User Number:',userNumber)
+    sophiroth_print('Login User Number:',userNumber)
 
 
 print('╭'+'\033[5;1;032mWelcome to Alvin\'s Compute Center\033[0m'.center(87,'-')+'╮')
