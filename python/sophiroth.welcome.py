@@ -13,7 +13,6 @@ cpuIdle=os.popen("vmstat 1 1|tail -1|awk '{print $15}'").read().split('\n')[0]
 userNumber=os.popen("w|head -1|awk '{print $4}'").read().split('\n')[0]
 hostname=socket.gethostname()
 
-
 def value(content):
 #    return ('\033[1;4;031m %s\033[0m'%content)  #\033[代表开始定义字体格式，1代表高亮显示，4代表使用下划线 ，031m代表红色字体，\033[0m代表使用终端设置，即取消颜色设置
     return ('\033[1;031m %s\033[0m'%content)  #\033[代表开始定义字体格式，1代表高亮显示，4代表使用下划线 ，031m代表红色字体，\033[0m代表使用终端设置，即取消颜色设置
