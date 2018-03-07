@@ -9,7 +9,7 @@ memTotalstr=os.popen('cat /proc/meminfo |grep -i memtotal').read().split('\n')[0
 memAvailable=os.popen('cat /proc/meminfo |grep -i MemAvailable').read().split('\n')[0]
 user=os.popen('whoami').read().split('\n')[0]
 homedir=os.popen('echo $HOME').read().split('\n')[0]
-cpuIdle=os.popen("vmstat 1 1|tail -1|awk '{print $15}'")
+cpuIdle=os.popen("vmstat 1 1|tail -1|awk '{print $15}'").read().split('\n')[0]
 userNumber=os.popen("w|head -1|awk '{print $4}'").read().split('\n')[0]
 #a=socket.get
 #print(a)
