@@ -10,7 +10,8 @@ memAvailable=os.popen('cat /proc/meminfo |grep -i MemAvailable').read().split('\
 user=os.popen('whoami').read().split('\n')[0]
 homedir=os.popen('echo $HOME').read().split('\n')[0]
 cpuIdle=os.popen("vmstat 1 1|tail -1|awk '{print $15}'").read().split('\n')[0]
-userNumber=os.popen("w|head -1|awk '{print $4}'").read().split('\n')[0]
+userNumber=os.popen("w|head -1").read().split('\n')[0]
+lastLoginIP=os.popen("last|head -2|tail -1|awk '{print $3}'").read().split('\n')[0]
 hostname=socket.gethostname()
 
 def value(content):
@@ -46,8 +47,9 @@ def print_memState():
 def print_userInfo():
     sophiroth_print('User Name:',user)
     sophiroth_print('Home Directory:',homedir)
-    sophiroth_print('Login User Number:',userNumber)
-
+    sophiroth_print('Login User Number:',re.findall(r'\s(\d\d?\d?)\suser',userNumber)[0])
+def print_lastIP():
+    sophiroth_print('Last Login IP:',lastLoginIP)
 def main():
     print('╭'+'\033[5;1;032mWelcome to Alvin\'s Compute Center\033[0m'.center(87,'-')+'╮')
     print_hostname()
@@ -57,6 +59,7 @@ def main():
     print_CPUState()
     print_memState()
     print_userInfo()
+    print_lastIP()
     print('╰'+'\033[4;1;035mSophiroth Cluster\033[0m'.center(87,'-')+'╯')
 
 if __name__ == '__main__':
