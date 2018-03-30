@@ -40,7 +40,7 @@ def print_LinuxKernel():
     sophiroth_print('Kernel Version:',kernel)
 def print_CPUState():
     sophiroth_print('vCPU:',vCPU)
-    sophiroth_print('CPU Idle:',cpuIdle)
+    #sophiroth_print('CPU Idle:',cpuIdle)
 def print_memState():
     totalMem=str(int(int(re.findall(r'\d.*\d',memTotalstr)[0])/1024))+' MB'
     availableMem=str(int(int(re.findall(r'\d.*\d',memAvailable)[0])/1024))+' MB'
