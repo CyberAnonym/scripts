@@ -15,4 +15,4 @@ subprocess.call('./configure --prefix=/usr/local/python3',shell=True)
 subprocess.call('make',shell=True)
 subprocess.call('make install',shell=True)
 subprocess.call('ln -s /usr/local/python3/bin/python3 /usr/bin/',shell=True)
-subprocess.call('python3 --version',shell=True
+subprocess.call('python3 --version',shell=True)
