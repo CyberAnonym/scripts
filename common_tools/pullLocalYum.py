@@ -16,7 +16,7 @@ def getRepo():
     systemVersion=re.findall(r'\d',os.popen('cat /etc/redhat-release').read())[0]
     repoUrl='https://raw.githubusercontent.com/AlvinWanCN/tech-center/master/software/yum.repos.d/centos%s.dc.alv.pub.repo'%systemVersion
     os.system('curl -fsSL %s > /etc/yum.repos.d/centos%s.dc.alv.pub.repo'%(repoUrl,systemVersion))
-    os.system('curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/tech-center/master/software/yum.repos.d/epel.dc.alv.pub.repo > /etc/yum.repos.d/epel.dc.alv.pub')
+    os.system('curl -fsSL https://raw.githubusercontent.com/AlvinWanCN/tech-center/master/software/yum.repos.d/epel.dc.alv.pub.repo > /etc/yum.repos.d/epel.dc.alv.pub.repo')
     os.system('yum repolist')
 def main():
     backupOriginRepo()
