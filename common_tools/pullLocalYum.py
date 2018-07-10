@@ -10,7 +10,8 @@ def backupOriginRepo():
         os.mkdir(backDIR)
     files=os.listdir('/etc/yum.repos.d')
     for file in files:
-        shutil.move(os.path.join(originDIR,file),os.path.join(backDIR,file))
+        if not re.findall(r'^backup',file):
+            shutil.move(os.path.join(originDIR,file),os.path.join(backDIR,file))
 def getRepo():
     systemVersion=re.findall(r'\d',os.popen('cat /etc/redhat-release').read())[0]
     repoUrl='https://raw.githubusercontent.com/AlvinWanCN/tech-center/master/software/yum.repos.d/centos%s.dc.alv.pub.repo'%systemVersion
